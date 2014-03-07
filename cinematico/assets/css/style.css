@@ -1,0 +1,560 @@
+
+/* Setup
+*********************************************************************************************/
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    color: #404040;
+}
+
+/* Typography
+*********************************************************************************************/
+
+@font-face {
+	font-family: 'icons';
+	src:url('../fonts/icons.eot');
+	src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icons.ttf') format('truetype'),
+		url('../fonts/icons.woff') format('woff'),
+		url('../fonts/icons.svg#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-edit {
+    width: 100%;
+	float: left;
+	position: relative;
+}
+
+.icon-edit:before {
+	content: "\e601";
+	font-size: 15px;
+	color: #cccccc;
+	position: absolute;
+	top: 4px;
+	left: 0;
+}
+
+.icon-check:before {
+	content: "\e600";
+}
+
+.icon-out:before {
+	content: "\e603";
+}
+
+.icon-preview:before {
+	content: "\e604";
+}
+
+.icon-close:before {
+	content: "\e605";
+}
+
+.icon-trash:before {
+	content: "\e606";
+}
+
+/* Typography
+*********************************************************************************************/
+
+h1 {
+    font-size: 52px;
+    line-height: 52px;
+    font-weight: 700;
+    color: #404040;
+    margin: 0 0 10px;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #404040;
+    margin: 0 0 5px;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #606060;
+    width: 100%;
+    float: left;
+    margin: 0;
+}
+
+p, ul { 
+    margin: 0 0 20px;
+}
+
+p.notify {
+    background-color: #f39068;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+    float: left;
+    padding: 0 8px;
+}
+
+p.notify a {
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+a {
+    color: #404040;
+    text-decoration: none;
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s; 
+}
+
+em { 
+    font-style: italic; 
+}
+
+strong { 
+    font-weight: bold;
+}
+
+/* Content
+*********************************************************************************************/
+
+.bar {
+    background: #57ca8e;
+    height: 2px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s; 
+}
+
+#content {
+    width: 100%;
+    float: left;
+    margin: 0;
+}
+
+.row {
+    width: 100%;
+    float: left;
+}
+
+.row.border {
+    border-bottom: 1px solid #f2f2f0;
+    padding: 40px 0 20px;
+}
+
+.row.images {
+    padding: 0 0 30px;
+}
+
+.row.images h3 {
+    margin: 0 0 5px;
+}
+
+.row.header {
+    padding: 70px 0 60px;
+}
+
+.row.footer {
+    padding: 10px 0 60px;
+}
+
+.row.footer p,
+.row.footer a {
+    font-size: 12px;
+    color: #cccccc;
+    margin: 0;
+}
+
+.row.footer a {
+    background: url('../images/logo-small.jpg') no-repeat;
+    background-size: 15px;
+    padding-left: 20px;
+}
+
+.row.footer img {
+    height: 15px;
+    opacity: 0.4;
+}
+
+.row.footer img:hover {
+    opacity: 0.8;
+}
+
+.content {
+    width: 620px;
+    float: left;
+    margin: 0 0 0 160px;
+}
+
+/* Form Styles
+*********************************************************************************************/
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 300;
+    color: #909090;
+    width: 90%;
+    float: left;
+    margin: 0 0 20px;
+    padding: 0 0 0 20px;
+    -moz-transition-duration: 0.1s;
+    -webkit-transition-duration: 0.1s;
+    position: relative;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    color: #404040;
+}
+
+textarea {
+    height: 22px
+}
+
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="file"] {
+    display: none;
+}
+
+label {
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s; 
+}
+
+/* Button Labels */
+label.button {
+    background-color: #F2f2f0;
+    border: 0;
+    border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 40px;
+    color: #909090;
+    text-align: center;
+    float: left;
+    height: 40px;
+    margin: 5px 1px 25px 0;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.button-group {
+    float: left;
+    margin: 5px 0 24px 0;
+}
+
+.button-group label.button {
+    background-color: #F2f2f0;
+    border: 0;
+    border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 40px;
+    color: #909090;
+    text-align: center;
+    float: left;
+    height: 40px;
+    margin: 0 1px 1px 0;
+}
+
+label.button.choose,
+input[type="radio"]:checked+label.button {
+    background-color: #57ca8e;
+    color: #ffffff;
+}
+
+label.button.replace {
+    background-color: #f39068;
+    color: #ffffff;
+}
+
+/* Frame Inputs */
+.frame {
+    border: 0;
+    border-radius: 3px;
+    width: 200px;
+    height: 150px;
+    float: left;
+    position: relative;
+    margin: 0 1px 1px 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.frame.logo,
+.frame.favicon {
+    background-color: #373737;
+    text-align: center;
+}
+
+.frame.logo img {
+    max-height: 130px;
+    max-width: 180px;
+    margin: 10px;
+}
+
+.frame.favicon img {
+    width: 16px;
+    height: 16px;
+    margin: 67px 0 0 0;
+}
+
+.frame.themes {
+    background-color: #f1f1f1;
+    height: 225px;
+}
+
+.frame.themes img {
+    width: 200px;
+}
+
+.frame.background img {
+    height: 150px;
+}
+
+/* Theme Labels */
+label.theme {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+label.theme:hover,
+input[type="radio"]:checked+label.theme {
+    opacity: 1.0;
+}
+
+/* Remove Labels */
+label.remove {
+    background-color: #57ca8e;
+    border-radius: 2px;
+    font-size: 10px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin: 0;
+    cursor: pointer;
+}
+
+label.remove:hover,
+input[type="radio"]:checked+label.remove,
+input[type="checkbox"]:checked+label.remove {
+    background-color: #f39068;
+}
+
+/* Buttons
+*********************************************************************************************/
+
+button,
+.buttons a {
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    cursor: pointer;
+    -webkit-appearance: none;
+    z-index: 1000;
+}
+
+button:hover,
+.buttons a:hover {
+    opacity: 0.8;
+}
+
+button:focus {
+    outline: none;
+}
+
+button.submit {
+    background-color: #57ca8e;
+    color: #ffffff;
+    bottom: 10px;
+    right: 10px;
+}
+
+.buttons a {
+    background-color: #f2f2f0;
+    color: #999999;
+}
+
+.buttons a:nth-child(1) {
+    bottom: 61px;
+    right: 10px;
+}
+
+.buttons a:nth-child(2) {
+    bottom: 112px;
+    right: 10px;
+}
+
+/* Mobile Optimizations
+*********************************************************************************************/
+
+@media (max-width: 1024px) {
+
+    .content {
+        margin: 0 0 0 100px;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    .content {
+        width: 480px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .content {
+        width: 320px;
+        margin: 0 0 0 60px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    h1 {
+        font-size: 30px;
+        line-height: 30px;
+        margin: 0 0 5px;
+    }
+    
+    h2 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    
+    h3 {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    .icon-edit:before {
+    	font-size: 13px;
+    	top: 2px;
+    }
+    
+    .row.border {
+        padding: 25px 0 10px;
+    }
+    
+    .row.header {
+        padding: 45px 0 30px;
+    }
+    
+    .content {
+        width: 280px;
+        margin: 0 0 0 20px;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea {
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0 0 20px;
+        padding: 0 0 0 20px;
+    }
+    
+    textarea {
+        height: 16px
+    }
+    
+    label.button {
+        font-size: 12px;
+        line-height: 30px;
+        height: 30px;
+        margin: 5px 1px 25px 0;
+        padding: 0 15px;
+    }
+        
+    button,
+    .buttons a {
+        font-size: 15px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    button.submit {
+        bottom: 5px;
+        right: 5px;
+    }
+    
+    .buttons a:nth-child(1) {
+        bottom: 36px;
+        right: 5px;
+    }
+    
+    .buttons a:nth-child(2) {
+        bottom: 67px;
+        right: 5px;
+    }
+
+}

@@ -1,0 +1,892 @@
+
+/* Setup
+*********************************************************************************************/
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+/* Typography
+*********************************************************************************************/
+
+h1 {
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+h2, h3 {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+p, ul { 
+    margin: 0 0 30px;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s; 
+}
+
+em { 
+    font-style: italic; 
+}
+
+strong { 
+    font-weight: bold;
+}
+
+/* Icons
+*********************************************************************************************/
+
+@font-face {
+    font-family: 'icons';
+    src:url(fonts/icons.eot);
+    src:url(fonts/icons.eot?#iefix) format('embedded-opentype'),
+    url(fonts/icons.woff) format('woff'),
+    url(fonts/icons.ttf) format('truetype'),
+    url(fonts/icons.svg#icons) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-play, .block .screenshot::before, .icon-menu, .page-next, .page-previous, .icon-facebook, .icon-twitter, .icon-google-plus, .icon-close {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-play:before {
+    content: "\e000";
+}
+
+.icon-menu:after {
+    content: "\e001";
+}
+
+.page-next:after {
+    content: "\f105";
+}
+
+.page-previous:before {
+    content: "\f104";
+}
+
+.icon-facebook:before {
+	content: "\e002";
+}
+
+.icon-twitter:before {
+	content: "\e003";
+}
+
+.icon-google-plus:before {
+	content: "\e004";
+}
+
+.icon-close:before {
+	content: "\e005";
+}
+
+/* Universal
+*********************************************************************************************/
+
+.row {
+    width: 100%;
+    float: left;
+}
+
+.content {
+    width: 1160px;
+    margin: 0px auto;
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+.content.grid {
+    width: 1200px;
+    padding: 0 20px;
+}
+
+.left {
+    width: 75%;
+    float: left;
+}
+
+.right {
+    width: 25%;
+    float: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.last {
+    margin: 0;
+}
+
+.none {
+    opacity: 0.2;
+}
+
+/* Header
+*********************************************************************************************/
+
+#header {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-bottom: 1px solid rgba(249, 249, 249, 0.1);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 40px 0;
+}
+
+#header h1 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+
+#header a {
+    color: #ffffff;
+}
+
+#header p {
+    margin: 0;
+}
+
+#header img {
+    max-height: 150px;
+    max-width: 50%;
+}
+
+#header .icon-menu {
+    float: right;
+}
+
+#header .icon-menu:after {
+    font-size: 18px;
+    padding-left: 5px;
+    vertical-align: bottom;
+}
+
+/* Backgrounds
+*********************************************************************************************/
+
+#background {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}
+
+.youtube #background {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 175%;
+}
+
+/* Video Styles
+*********************************************************************************************/
+
+#video {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 60px 0 40px;
+}
+
+#embed {
+    width: 100%;
+    height: 653px;
+    margin: 20px 0;
+}
+
+#embed iframe,
+#embed object,
+#embed embed,
+#embed video {
+    width: 100%;
+    height: 100%;
+}
+
+#description {
+    padding: 40px 0 0;
+}
+
+#description h2 {
+    font-size: 34px;
+    line-height: 42px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+#description p {
+    margin: 0 0 10px;
+}
+
+#description .right {
+    text-align: right;
+}
+
+#description a.button {
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+#description .left a.button {
+    font-size: 12px;
+    line-height: 30px;
+    margin-top: 5px;
+}
+
+#description .left a.button.icon-close {
+    margin-top: 0;
+}
+
+#description a.button:hover {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+/* Nav
+*********************************************************************************************/
+
+nav {
+    background-color: rgba(12, 12, 12, 0.95);
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    width: 280px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    z-index: 10000;
+}
+
+nav .section {
+    width: 200px;
+    float: left;
+    padding: 40px 40px 0 40px;
+    position: relative;
+}
+
+nav .section img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+nav h3 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+nav p {
+    margin: 0;
+}
+
+nav .icon-close {
+    color: #ffffff;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+nav .icon-facebook:before,
+nav .icon-twitter:before,
+nav .icon-google-plus:before {
+    padding-right: 5px;
+}
+
+nav a,
+nav .icon-close:hover {
+    color: #777777;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul.filter {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+ul.filter li.current a {
+    color: #ffffff;
+}
+
+/* Content
+*********************************************************************************************/
+
+#content {
+    padding: 20px 0 40px;
+}
+
+#content header {
+    padding: 40px 0;
+}
+
+#content header h3 {
+    line-height: 24px;
+    margin-bottom: 2px;
+}
+
+#content header p {
+    margin: 0;
+}
+
+.block {
+    width: 360px;
+    height: 290px;
+    float: left;
+    margin: 20px;
+    position: relative;
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s;
+}
+
+.block:hover,
+.block.current {
+    opacity: 1.0;
+}
+
+.block .screenshot {
+    height: 203px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.block img {
+    width: 110%;
+    margin-left: -5%;
+}
+
+.youtube .block img {
+    margin-top: -15%;
+}
+
+.block.current .screenshot::before {
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    line-height: 30px;
+    text-align: center;
+    width: 28px;
+    height: 30px;
+    padding-left: 2px;
+    position: absolute;
+    z-index: 10000;
+    bottom: 10px;
+    left: 10px;
+    content: "\e000";
+}
+
+.block h2 {
+    font-size: 16px;
+    line-height: 22px;
+    width: 100%;
+    float: left;
+    margin: 10px 0 2px;
+}
+
+.block p {    
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 300;
+    color: #727272;
+    margin: 0 0 12px;
+}
+
+/* Pages
+*********************************************************************************************/
+
+#page {
+    padding: 80px 0 0;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+}
+
+#page a {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.background #page {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#page .content {
+    width: 760px;
+}
+
+#page h2 {
+    font-size: 52px;
+    line-height: 72px;
+    color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 10px;
+}
+
+.background #page h2 {
+    color: #ffffff;
+}
+
+.page #background {
+    height: 100%;
+}
+
+.page #header {
+    background: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.page #header a {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.page.background #header {
+    background: none;
+    border-bottom: 1px solid rgba(249, 249, 249, 0.1);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.page #header a {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.page.background #header a {
+    color: #ffffff;
+}
+
+#page .button {
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 39px;
+    text-transform: uppercase;
+    height: 39px;
+    padding: 0 25px;
+    display: inline-block;
+}
+
+#page .button:hover {
+    border-color: rgba(0, 0, 0, 0.75);
+}
+
+.background #page .button {
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    color: #ffffff;
+}
+
+.background #page .button:hover {
+    border-color: #ffffff;
+}
+
+/* The Loader
+*********************************************************************************************/
+
+#loading {
+    background: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20000;
+}
+
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}.animated.hinge{-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}@-webkit-keyframes flash {
+	0%, 50%, 100% {opacity: 1;}	25%, 75% {opacity: 0.8;}
+}
+
+@-moz-keyframes flash {
+	0%, 50%, 100% {opacity: 1;}	
+	25%, 75% {opacity: 0.8;}
+}
+
+@-o-keyframes flash {
+	0%, 50%, 100% {opacity: 1;}	
+	25%, 75% {opacity: 0.8;}
+}
+
+@keyframes flash {
+	0%, 50%, 100% {opacity: 1;}	
+	25%, 75% {opacity: 0.8;}
+}
+
+.flash {
+	-webkit-animation-name: flash;
+	-moz-animation-name: flash;
+	-o-animation-name: flash;
+	animation-name: flash;
+}
+
+/* Footer
+*********************************************************************************************/
+
+#footer {
+    border-top: 1px solid rgba(249, 249, 249, 0.95);
+    color: #525252;
+    padding: 20px 0;
+    position: relative;
+}
+
+#footer .right {
+    text-align: right;
+}
+
+#footer p {
+    margin: 0;
+}
+
+#footer img {
+    height: 15px;
+    opacity: 0.4;
+}
+
+#footer img:hover {
+    opacity: 0.8;
+}
+
+#pagination {
+    float: right;
+    margin: -1px 0 0 5px;
+}
+
+#pagination a {
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.45);
+    text-align: center;
+    width: 50px;
+    height: 19px;
+    margin: 0 1px 0 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#pagination a:hover {
+    color: rgba(64, 64, 64, 0.8);
+}
+
+#footer a.cinematico {
+    background: url('../../../../cinematico/assets/images/logo-small.jpg') no-repeat;
+    background-size: 15px;
+    padding-left: 20px;
+    font-size: 12px;
+    color: #cccccc;
+    margin: 0;
+}
+
+/* Mobile Optimizations
+*********************************************************************************************/
+
+@media (max-width: 1240px) {
+
+    /* Universal
+    *****************************************************************************************/
+    
+    .content {
+        width: 940px;
+    }
+    
+    .content.grid {
+        width: 980px;
+    }
+    
+    /* Video Styles
+    *****************************************************************************************/
+    
+    #embed {
+        height: 529px;
+    }
+    
+    /* Content
+    *****************************************************************************************/
+    
+    .block {
+        width: 286px;
+        height: 248px;
+    }
+    
+    .block .screenshot {
+        height: 161px;
+    }
+
+}
+
+@media (max-width: 1020px) {
+
+    /* Universal
+    *****************************************************************************************/
+    
+    .content {
+        width: 720px;
+    }
+    
+    .content.grid {
+        width: 760px;
+    }
+    
+    /* Video Styles
+    *****************************************************************************************/
+    
+    #embed {
+        height: 405px;
+    }
+    
+    /* Content
+    *****************************************************************************************/
+    
+    .block {
+        width: 340px;
+        height: 278px;
+    }
+    
+    .block .screenshot {
+        height: 191px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    /* Universal
+    *****************************************************************************************/
+    
+    .content {
+        width: 520px;
+        padding: 0 20px;
+    }
+    
+    .content.grid {
+        width: 540px;
+    }
+    
+    /* Header
+    *****************************************************************************************/
+    
+    #header {
+        background-color: #202020;
+        border-bottom: 1px solid #303030;
+    }
+    
+    /* Video Styles
+    *****************************************************************************************/
+    
+    #video {
+        background-color: #202020;
+    }
+    
+    #embed {
+        height: 293px;
+    }
+    
+    #description {
+        padding: 20px 0 0;
+    }
+    
+    #description h2 {
+        font-size: 24px;
+        line-height: 32px;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+    
+    /* Content
+    *****************************************************************************************/
+    
+    .block {
+        width: 250px;
+        height: 230px;
+        margin: 10px;
+    }
+    
+    .block .screenshot {
+        height: 135px;
+    }
+    
+    .block .screenshot::before {
+        font-size: 15px;
+        line-height: 30px;
+        width: 45px;
+        height: 30px;
+    }
+    
+    /* Pages
+    *********************************************************************************************/
+    
+    #page {
+        padding: 80px 0 0;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: left;
+    }
+    
+    #page .content {
+        width: 520px;
+        padding: 0 20px;
+    }
+    
+    #page h2 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 5px;
+    }
+
+}
+
+@media (max-width: 580px) {
+
+    /* Setup
+    *****************************************************************************************/
+    
+    body {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    /* Universal
+    *****************************************************************************************/
+    
+    .content {
+        width: 280px;
+    }
+    
+    .content.grid {
+        width: 300px;
+        padding: 0;
+    }
+    
+    /* Header
+    *****************************************************************************************/
+    
+    #header h1 {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+    
+    /* Video Styles
+    *****************************************************************************************/
+    
+    #video {
+        padding: 30px 0 10px;
+    }
+    
+    #embed {
+        height: 158px;
+        margin: 20px 0 0;
+    }
+    
+    #description h2 {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 2px;
+    }
+    
+    #description .right {
+        display: none;
+    }
+    
+    /* Content
+    *****************************************************************************************/
+    
+    #content {
+        padding: 20px 0 10px;
+    }
+    
+    #content header {
+        padding: 10px 0 20px;
+    }
+    
+    .block {
+        width: 280px;
+        height: 240px;
+    }
+    
+    .block .screenshot {
+        height: 158px;
+    }
+    
+    .block .screenshot::before {
+        font-size: 15px;
+        line-height: 30px;
+        width: 45px;
+        height: 30px;
+    }
+    
+    /* Pages
+    *********************************************************************************************/
+    
+    #page {
+        padding: 30px 0 0;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    #page .content {
+        width: 280px;
+    }
+    
+    #page h2 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 5px;
+    }
+    
+    /* Footer
+    *****************************************************************************************/
+    
+    #footer .left {
+        display: none;
+    }
+    
+    #footer .right {
+        width: 100%;
+        text-align: left;
+    }
+    
+    #footer p {
+        color: #ffffff;
+    }
+    
+    #footer .pagination {
+        float: left;
+    }
+
+}

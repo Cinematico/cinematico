@@ -1,0 +1,12 @@
+
+.htaccess
+
+config.php
+
+themes/*
+!themes/focus/
+
+plugins/*
+!plugins/index.php
+
+jason/index.php
