@@ -1,4 +1,3 @@
-
 .htaccess
 
 config.php
@@ -9,4 +8,5 @@ themes/*
 plugins/*
 !plugins/index.php
 
-jason/index.php
+jason/
+jason/*
