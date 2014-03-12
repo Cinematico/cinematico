@@ -8,5 +8,5 @@ themes/*
 plugins/*
 !plugins/index.php
 
-jason/
-jason/*
+network-test/
+network-test/*
