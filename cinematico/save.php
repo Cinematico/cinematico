@@ -316,13 +316,7 @@ if ($_POST["submit"] == "submit" && (!file_exists($settings_file) || isset($_SES
     }
     
     // Redirect
-    if (file_exists($settings_file)) {
-        // Redirect to the settings page.
-        header("Location: " . $site_url . '/settings');
-    } else {
-        // Redirect to the site.
-        header("Location: " . $site_url); 
-    }
+    header("Location: " . $site_url . '/settings');
 }
 
 ?>

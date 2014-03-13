@@ -216,6 +216,14 @@ strong {
     margin: 0 0 0 160px;
 }
 
+.selection {
+    display: none;
+}
+
+.selected {
+    display: block;
+}
+
 /* Form Styles
 *********************************************************************************************/
 

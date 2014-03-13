@@ -51,3 +51,23 @@ $(document).ready(function() {
     // bind form using 'ajaxForm' 
     $('#settings').ajaxForm(options);
 });
+
+$(document).ready(function(){ 
+    $("#video-service-selection input[type=radio]").click(function() {
+        var field = $(this).data("rel");
+        $(".video-service").hide();
+        $("#"+field).show().addClass("selected");
+    }); 
+    
+    $("#youtube-display-selection input[type=radio]").click(function() {
+        var field = $(this).data("rel");
+        $(".youtube-display").hide();
+        $("#"+field).show().addClass("selected");
+    });
+    
+    $("#vimeo-display-selection input[type=radio]").click(function() {
+        var field = $(this).data("rel");
+        $(".vimeo-display").hide();
+        $("#"+field).show().addClass("selected");
+    }); 
+});

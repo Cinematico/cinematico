@@ -190,12 +190,12 @@ if (isset($_GET['action']))
                     
                     <h3>Site Title</h3>
                     <div class="icon-edit">
-                        <input type="text" name="site_title" id="site_title" value="<?php get_text($site_title); ?>" placeholder="e.g. Welcome to Cinematico">
+                        <input type="text" name="site_title" id="site_title" value="<?php get_text($site_title); ?>"  placeholder="No pressure.">
                     </div>
                     
                     <h3>Site Description</h3>
                     <div class="icon-edit">
-                        <textarea name="site_description" id="site_description" placeholder="The easiest way to create an exceptional website for your videos."><?php get_text($site_description); ?></textarea>
+                        <textarea name="site_description" id="site_description" placeholder="Something short and to the point."><?php get_text($site_description); ?></textarea>
                     </div>
                 </div>
             </div>
@@ -267,80 +267,86 @@ if (isset($_GET['action']))
                     <p>Your video service options and display preferences.</p>
                     
                     <h3>Your Video Service</h3>
-                    <input type="radio" name="video_service" id="youtube" value="youtube" <?php if($video_service == 'youtube') { ?>checked<?php } ?> />
-                    <label class="button" for="youtube">YouTube</label>
-                    <input type="radio" name="video_service" id="vimeo" value="vimeo" <?php if($video_service == 'vimeo') { ?>checked<?php } ?> />
-                    <label class="button" for="vimeo">Vimeo</label>
-                    
-                    <?php if($video_service == 'youtube') { ?>
-                    <h3>Video Source</h3>
-                    <input type="radio" name="youtube_display" id="user" value="user" <?php if($youtube_display == 'user') { ?>checked<?php } ?> />
-                    <label class="button" for="user">User</label>
-                    <input type="radio" name="youtube_display" id="channel" value="channel" <?php if($youtube_display == 'channel') { ?>checked<?php } ?> />
-                    <label class="button" for="channel">Channel</label>
-                    <input type="radio" name="youtube_display" id="playlist" value="playlist" <?php if($youtube_display == 'playlist') { ?>checked<?php } ?> />
-                    <label class="button" for="playlist">Playlist</label>
-                    
-                    <?php if($youtube_display == 'user') { ?>
-                    <h3>Username</h3>
-                    <div class="icon-edit">
-                        <input type="text" name="youtube_username" id="youtube_username" value="<?php get_text($youtube_username); ?>">
-                    </div>
-                    <?php } ?>
-                    
-                    <?php if($youtube_display == 'channel') { ?>
-                    <h3>Channel ID</h3>
-                    <div class="icon-edit">
-                        <input type="text" name="youtube_channel" id="youtube_channel" value="<?php get_text($youtube_channel); ?>">
-                    </div>
-                    <?php } ?>
-                    
-                    <?php if($youtube_display == 'playlist') { ?>
-                    <h3>Playlist ID</h3>
-                    <div class="icon-edit">
-                        <input type="text" name="youtube_playlist" id="youtube_playlist" value="<?php get_text($youtube_playlist); ?>">
-                    </div>
-                    <?php } ?>
-                    
-                    <h3>Featured Video ID</h3>
-                    <div class="icon-edit">
-                        <input type="text" name="youtube_featured_video" id="youtube_featured_video" value="<?php get_text($youtube_featured_video); ?>">
-                    </div>
-                    <?php } ?>
-                    
-                    <?php if($video_service == 'vimeo') { ?>
-                    <h3>Vimeo Username</h3>
-                    <div class="icon-edit">
-                        <input type="text" name="vimeo_username" id="vimeo_username" value="<?php get_text($vimeo_username); ?>">
+                    <div id="video-service-selection">
+                        <input type="radio" name="video_service" id="youtube" value="youtube" data-rel="video-service-youtube" <?php if($video_service == 'youtube') { ?>checked<?php } ?> />
+                        <label class="button" for="youtube">YouTube</label>
+                        <input type="radio" name="video_service" id="vimeo" value="vimeo" data-rel="video-service-vimeo" <?php if($video_service == 'vimeo') { ?>checked<?php } ?> />
+                        <label class="button" for="vimeo">Vimeo</label>
                     </div>
                     
-                    <h3>Video Source</h3>
-                    <input type="radio" name="vimeo_display" id="user" value="user" <?php if($vimeo_display == 'user') { ?>checked<?php } ?> />
-                    <label class="button" for="user">User</label>
-                    <input type="radio" name="vimeo_display" id="channel" value="channel" <?php if($vimeo_display == 'channel') { ?>checked<?php } ?> />
-                    <label class="button" for="channel">Channel</label>
-                    <input type="radio" name="vimeo_display" id="album" value="album" <?php if($vimeo_display == 'album') { ?>checked<?php } ?> />
-                    <label class="button" for="album">Album</label>
-                    
-                    <?php if($vimeo_display == 'channel') { ?>
-                    <h3>Channel ID</h3>
-                    <div class="icon-edit">
-                        <input type="text" name="vimeo_channel" id="vimeo_channel" value="<?php get_text($vimeo_channel); ?>">
+                    <div id="video-service-youtube" class="video-service selection<?php if($video_service == 'youtube') { ?> selected<?php } ?>">
+                        <h3>Username</h3>
+                        <div class="icon-edit">
+                            <input type="text" name="youtube_username" id="youtube_username" placeholder="Your YouTube username." value="<?php get_text($youtube_username); ?>">
+                        </div>
+                        
+                        <h3>Video Source</h3>
+                        <div id="youtube-display-selection">
+                            <input type="radio" name="youtube_display" id="youtube_user" value="user" <?php if($youtube_display == 'user') { ?>checked<?php } ?> />
+                            <label class="button" for="youtube_user">User</label>
+                            <input type="radio" name="youtube_display" id="youtube_channel" value="channel" data-rel="youtube-channel" <?php if($youtube_display == 'channel') { ?>checked<?php } ?> />
+                            <label class="button" for="youtube_channel">Channel</label>
+                            <input type="radio" name="youtube_display" id="youtube_playlist" value="playlist" data-rel="youtube-playlist" <?php if($youtube_display == 'playlist') { ?>checked<?php } ?> />
+                            <label class="button" for="youtube_playlist">Playlist</label>
+                        </div>
+                        
+                        <div id="youtube-channel" class="youtube-display selection<?php if($youtube_display == 'channel') { ?> selected<?php } ?>">
+                            <h3>Channel ID</h3>
+                            <div class="icon-edit">
+                                <input type="text" name="youtube_channel" id="youtube_channel" placeholder="A valid YouTube channel ID." value="<?php get_text($youtube_channel); ?>">
+                            </div>
+                        </div>
+                        
+                        <div id="youtube-playlist" class="youtube-display selection<?php if($youtube_display == 'playlist') { ?> selected<?php } ?>">
+                            <h3>Playlist ID</h3>
+                            <div class="icon-edit">
+                                <input type="text" name="youtube_playlist" id="youtube_playlist" placeholder="A valid YouTube playlist ID." value="<?php get_text($youtube_playlist); ?>">
+                            </div>
+                        </div>
+                        
+                        <h3>Featured Video ID</h3>
+                        <div class="icon-edit">
+                            <input type="text" name="youtube_featured_video" id="youtube_featured_video" placeholder="A valid YouTube video ID." value="<?php get_text($youtube_featured_video); ?>">
+                        </div>
                     </div>
-                    <?php } ?>
-                    
-                    <?php if($vimeo_display == 'album') { ?>
-                    <h3>Album ID</h3>
-                    <div class="icon-edit">
-                        <input type="text" name="vimeo_album" id="vimeo_album" value="<?php get_text($vimeo_album); ?>">
+        
+                    <div id="video-service-vimeo" class="video-service selection<?php if($video_service == 'vimeo') { ?> selected<?php } ?>">
+                        <h3>Username</h3>
+                        <div class="icon-edit">
+                            <input type="text" name="vimeo_username" id="vimeo_username" placeholder="Your Vimeo username." value="<?php get_text($vimeo_username); ?>">
+                        </div>
+                        
+                        <h3>Video Source</h3>
+                        <div id="vimeo-display-selection">
+                            <input type="radio" name="vimeo_display" id="vimeo_user" value="user" <?php if($vimeo_display == 'user') { ?>checked<?php } ?> />
+                            <label class="button" for="vimeo_user">User</label>
+                            <input type="radio" name="vimeo_display" id="vimeo_channel" value="channel" data-rel="vimeo-channel" <?php if($vimeo_display == 'channel') { ?>checked<?php } ?> />
+                            <label class="button" for="vimeo_channel">Channel</label>
+                            <input type="radio" name="vimeo_display" id="vimeo_album" value="album" data-rel="vimeo-album" <?php if($vimeo_display == 'album') { ?>checked<?php } ?> />
+                            <label class="button" for="vimeo_album">Album</label>
+                        </div>
+                        
+                        
+                        <div id="vimeo-channel" class="vimeo-display selection<?php if($vimeo_display == 'channel') { ?> selected<?php } ?>">
+                            <h3>Channel ID</h3>
+                            <div class="icon-edit">
+                                <input type="text" name="vimeo_channel" id="vimeo_channel" placeholder="A valid Vimeo channel ID." value="<?php get_text($vimeo_channel); ?>">
+                            </div>
+                        </div>
+                        
+                        
+                        <div id="vimeo-album" class="vimeo-display selection<?php if($vimeo_display == 'album') { ?> selected<?php } ?>">
+                            <h3>Album ID</h3>
+                            <div class="icon-edit">
+                                <input type="text" name="vimeo_album" id="vimeo_album" placeholder="A valid Vimeo album ID." value="<?php get_text($vimeo_album); ?>">
+                            </div>
+                        </div>
+                        
+                        <h3>Featured Video ID</h3>
+                        <div class="icon-edit">
+                            <input type="text" name="vimeo_featured_video" id="vimeo_featured_video" placeholder="A valid Vimeo video ID." value="<?php get_text($vimeo_featured_video); ?>">
+                        </div>
                     </div>
-                    <?php } ?>
-                    
-                    <h3>Featured Video ID</h3>
-                    <div class="icon-edit">
-                        <input type="text" name="vimeo_featured_video" id="vimeo_featured_video" value="<?php get_text($vimeo_featured_video); ?>">
-                    </div>
-                    <?php } ?>
                 </div>
             </div>
             
@@ -472,7 +478,7 @@ if (isset($_GET['action']))
                     
                     <h3>About Page Title</h3>
                     <div class="icon-edit">
-                        <input type="text" name="about_title" id="about_title" value="<?php get_text($about_title); ?>" placeholder="e.g. Your About Title">
+                        <input type="text" name="about_title" id="about_title" value="<?php get_text($about_title); ?>" placeholder="e.g. About">
                     </div>
                     
                     <h3>About Page Text</h3>

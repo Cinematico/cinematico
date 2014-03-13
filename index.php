@@ -236,25 +236,123 @@ if ($_GET['filename'] == 'settings') {
                 </div>
             </div>
             
-            <form id="settings" method="post" action="./cinematico/save.php">
+            <form id="setup" method="post" action="./cinematico/save.php" enctype="multipart/form-data">
                 <input type="hidden" name="site_url" id="site_url" value="<?php echo(rtrim($site_url, '/')); ?><?php if ($site_url == $domain) { ?>/<?php } ?>">
-                <input type="hidden" name="site_title" id="site_title" value="Welcome to Cinematico">
-                <input type="hidden" name="site_description" id="site_description" value="The easiest way to create an exceptional website for your videos.">
-                <input type="hidden" name="video_service" id="video_service" value="youtube">
-                <input type="hidden" name="youtube_username" id="youtube_username" value="cinematico">
-                <input type="hidden" name="youtube_display" id="youtube_display" value="playlist">
-                <input type="hidden" name="youtube_playlist" id="youtube_playlist" value="PLwfMsiHMs_Z1XtTQClWxs9xwsWjLdBAE3">
                 <input type="hidden" name="site_theme" id="focus" value="focus" />
                 <input type="hidden" name="gallery_title" id="gallery_title" value="Getting Started">
                 <input type="hidden" name="gallery_description" id="gallery_description" value="A short series of videos to help you get started.">
                 <input type="hidden" name="gallery_items_number" id="gallery_items_number" value="6">
                 <input type="hidden" name="footer_text" id="footer_text" value="Copyright &copy; <?php echo date("Y") ?> Cinematico">
-                <input type="hidden" name="about_title" id="about_title" value="My About Title">
+                <input type="hidden" name="about_title" id="about_title" value="Your About Title">
                 <input type="hidden" name="about_text" id="about_text" value="This text is displayed on your “about” page. Write a little something about yourself.">
                 <input type="hidden" name="not_found_title" id="not_found_title" value="Not Found">
                 <input type="hidden" name="not_found_text" id="not_found_text" value="Sorry, but what you're looking for isn't here.">
                 <input type="hidden" name="profile_name" id="profile_name" value="Cinematico">
                 <input type="hidden" name="profile_twitter" id="profile_twitter" value="TryCinematico">
+                
+                <div class="row border">
+                    <div class="content">
+                        <h2>Site Title &amp; Description</h2>
+                        <p>Your site title and description options.</p>
+                        
+                        <h3>Site Title</h3>
+                        <div class="icon-edit">
+                            <input type="text" name="site_title" id="site_title" placeholder="No pressure." required>
+                        </div>
+                        
+                        <h3>Site Description</h3>
+                        <div class="icon-edit">
+                            <textarea name="site_description" id="site_description" placeholder="Something short and to the point." required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row border">
+                    <div class="content">
+                        <h2>Video Service Options</h2>
+                        <p>Your video service options and display preferences.</p>
+                        
+                        <h3>Your Video Service</h3>
+                        <div id="video-service-selection">
+                            <input type="radio" name="video_service" id="youtube" value="youtube" data-rel="video-service-youtube"/>
+                            <label class="button" for="youtube">YouTube</label>
+                            <input type="radio" name="video_service" id="vimeo" value="vimeo" data-rel="video-service-vimeo"/>
+                            <label class="button" for="vimeo">Vimeo</label>
+                        </div>
+                        
+                        <div id="video-service-youtube" class="video-service selection">
+                            <h3>Username</h3>
+                            <div class="icon-edit">
+                                <input type="text" name="youtube_username" id="youtube_username" placeholder="Your YouTube username.">
+                            </div>
+                            
+                            <h3>Video Source</h3>
+                            <div id="youtube-display-selection">
+                                <input type="radio" name="youtube_display" id="youtube_user" value="user" />
+                                <label class="button" for="youtube_user">User</label>
+                                <input type="radio" name="youtube_display" id="youtube_channel" value="channel" data-rel="youtube-channel" />
+                                <label class="button" for="youtube_channel">Channel</label>
+                                <input type="radio" name="youtube_display" id="youtube_playlist" value="playlist" data-rel="youtube-playlist" />
+                                <label class="button" for="youtube_playlist">Playlist</label>
+                            </div>
+                            
+                            <div id="youtube-channel" class="youtube-display selection">
+                                <h3>Channel ID</h3>
+                                <div class="icon-edit">
+                                    <input type="text" name="youtube_channel" id="youtube_channel" placeholder="A valid YouTube channel ID.">
+                                </div>
+                            </div>
+                            
+                            <div id="youtube-playlist" class="youtube-display selection">
+                                <h3>Playlist ID</h3>
+                                <div class="icon-edit">
+                                    <input type="text" name="youtube_playlist" id="youtube_playlist" placeholder="A valid YouTube playlist ID.">
+                                </div>
+                            </div>
+                            
+                            <h3>Featured Video ID</h3>
+                            <div class="icon-edit">
+                                <input type="text" name="youtube_featured_video" id="youtube_featured_video" placeholder="A valid YouTube video ID.">
+                            </div>
+                        </div>
+            
+                        <div id="video-service-vimeo" class="video-service selection">
+                            <h3>Username</h3>
+                            <div class="icon-edit">
+                                <input type="text" name="vimeo_username" id="vimeo_username" placeholder="Your Vimeo username.">
+                            </div>
+                            
+                            <h3>Video Source</h3>
+                            <div id="vimeo-display-selection">
+                                <input type="radio" name="vimeo_display" id="vimeo_user" value="user" />
+                                <label class="button" for="vimeo_user">User</label>
+                                <input type="radio" name="vimeo_display" id="vimeo_channel" value="channel" data-rel="vimeo-channel" />
+                                <label class="button" for="vimeo_channel">Channel</label>
+                                <input type="radio" name="vimeo_display" id="vimeo_album" value="album" data-rel="vimeo-album" />
+                                <label class="button" for="vimeo_album">Album</label>
+                            </div>
+                            
+                            <div id="vimeo-channel" class="vimeo-display selection">
+                                <h3>Channel ID</h3>
+                                <div class="icon-edit">
+                                    <input type="text" name="vimeo_channel" id="vimeo_channel" placeholder="A valid Vimeo channel ID.">
+                                </div>
+                            </div>
+                            
+                            <div id="vimeo-album" class="vimeo-display selection">
+                                <h3>Album ID</h3>
+                                <div class="icon-edit">
+                                    <input type="text" name="vimeo_album" id="vimeo_album" placeholder="A valid Vimeo album ID.">
+                                </div>
+                            </div>
+                            
+                            <h3>Featured Video ID</h3>
+                            <div class="icon-edit">
+                                <input type="text" name="vimeo_featured_video" id="vimeo_featured_video" placeholder="A valid Vimeo video ID.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="row border">
                     <div class="content">
@@ -268,7 +366,7 @@ if ($_GET['filename'] == 'settings') {
                         
                         <h3>Email</h3>
                         <div class="icon-edit">
-                            <input type="email" name="email" id="email" placeholder="e.g. you@youremail.com" required>
+                            <input type="email" name="email" id="email" placeholder="you@youremail.com" required>
                         </div>
                         
                         <h3>Password</h3>
@@ -287,6 +385,9 @@ if ($_GET['filename'] == 'settings') {
                 </div>
             </div>
         </div>
+        
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script src="<?php echo(rtrim($site_url, '/')); ?>/cinematico/assets/js/app.js"></script>
     </body>
     </html>
 
