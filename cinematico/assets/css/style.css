@@ -188,6 +188,15 @@ strong {
     padding: 10px 0 60px;
 }
 
+.row p a {
+    font-weight: 400;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.row p a:hover {
+    color: #cccccc;
+}
+
 .row.footer p,
 .row.footer a {
     font-size: 12px;

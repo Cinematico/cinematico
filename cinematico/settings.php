@@ -353,7 +353,7 @@ if (isset($_GET['action']))
             <div class="row border">
                 <div class="content">
                     <h2>Site Theme</h2>
-                    <p>Choose an existing theme or install new themes.</p>
+                    <p>Choose an existing theme or install new themes. There’s a growing library of new themes that can be purchased on the <a href="http://cinemati.co/themes" target="_blank">Cinemati.co marketplace</a>.</p>
                     
                     <div class="row images">
                         <h3>Choose a Theme</h3>
