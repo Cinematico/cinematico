@@ -396,3 +396,11 @@ function get_analytics() {
     <?php 
     }
 }
+
+function get_cinematico_version() {
+    
+    $content = file('./ABOUT.md');
+    $version = str_replace(array("\n", '- '), '', $content[1]);
+    echo($version);
+    
+}

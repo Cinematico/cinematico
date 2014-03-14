@@ -200,7 +200,9 @@ strong {
 .row.footer p,
 .row.footer a {
     font-size: 12px;
+    font-weight: 300;
     color: #cccccc;
+    border: none;
     margin: 0;
 }
 

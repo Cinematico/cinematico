@@ -579,7 +579,7 @@ if (isset($_GET['action']))
         
         <div class="row footer">
             <div class="content">
-                <p><a href="http://cinemati.co" target="_blank">Powered by Cinematico</a></p>
+                <p><a href="http://cinemati.co" target="_blank">Powered by Cinematico - <?php get_cinematico_version(); ?></a></p>
             </div>
         </div>
     </div>
