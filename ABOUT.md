@@ -1,9 +1,9 @@
-# NAME
+## NAME
 - Cinematico
 
-# AUTHOR
+## AUTHOR
 - Cinematico
 - Cinemati.co
 
-# VERSION
+## VERSION
 - 1.0.0
