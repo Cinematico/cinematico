@@ -1,9 +1,9 @@
-## NAME
+## Theme Name
 - Focus
 
-## AUTHOR
+## Theme Author
 - Cinematico
 - Cinemati.co
 
-## VERSION
+## Current Version
 - 1.0.0
