@@ -239,8 +239,8 @@ if ($_GET['filename'] == 'settings') {
             <form id="setup" method="post" action="./cinematico/save.php" enctype="multipart/form-data">
                 <input type="hidden" name="site_url" id="site_url" value="<?php echo(rtrim($site_url, '/')); ?><?php if ($site_url == $domain) { ?>/<?php } ?>">
                 <input type="hidden" name="site_theme" id="focus" value="focus" />
-                <input type="hidden" name="gallery_title" id="gallery_title" value="Getting Started">
-                <input type="hidden" name="gallery_description" id="gallery_description" value="A short series of videos to help you get started.">
+                <input type="hidden" name="gallery_title" id="gallery_title" value="Your Gallery Title">
+                <input type="hidden" name="gallery_description" id="gallery_description" value="A short description for your video gallery.">
                 <input type="hidden" name="gallery_items_number" id="gallery_items_number" value="6">
                 <input type="hidden" name="footer_text" id="footer_text" value="Copyright &copy; <?php echo date("Y") ?> Cinematico">
                 <input type="hidden" name="about_title" id="about_title" value="Your About Title">
