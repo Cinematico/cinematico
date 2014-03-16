@@ -66,7 +66,7 @@ if (isset($_GET['action']))
                 $headers[] = "Reply-To: " . $email;
                 $headers[] = "X-Mailer: PHP/" . phpversion();
 
-                mail($email, $site_title . " - Recover your Dropplets Password", $message, implode("\r\n", $headers));
+                mail($email, $site_title . " - Recover your Cinematico Password", $message, implode("\r\n", $headers));
                 $login_error = "Details on how to recover your password have been sent to your email.";
             
             // If not verified, display a verification error.   
