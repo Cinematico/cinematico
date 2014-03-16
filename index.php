@@ -66,6 +66,11 @@ include(BASE_DIR . 'cinematico/includes/feedwriter.php');
 // All Cinematico functions.
 include(BASE_DIR . 'cinematico/includes/functions.php');
 
+// Include plugins.
+foreach(glob(BASE_DIR . 'plugins/' . '*.php') as $plugin){
+    include_once $plugin;
+}
+
 /*-----------------------------------------------------------------------------------*/
 /* Page Setup
 /*-----------------------------------------------------------------------------------*/
