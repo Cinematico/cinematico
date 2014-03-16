@@ -6,8 +6,9 @@ if (file_exists('config.php')) {
 /* Network Installation Settings
 /*-----------------------------------------------------------------------------------*/
 
-$network_install = false;
-$network_url = '';
+if (file_exists('network.php')) {
+    include('network.php');
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* Setup
@@ -18,7 +19,7 @@ include('config.php');
 // Get the base directory.
 if ($network_install) {
     $base_url = $network_url;
-    $base_dir = '../';
+    $base_dir = $network_dir;
 } else {
     $base_url = $site_url;  
     $base_dir = '';  
