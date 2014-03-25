@@ -137,7 +137,7 @@ if ($site_image) {
 }
 
 // Get the page description and author meta.
-$page_meta[] = '<meta name="description" content="' . $meta_description . '">';
+$page_meta[] = '<meta name="description" content="' . strip_tags($meta_description) . '">';
 $page_meta[] = '<meta name="author" content="' . $page_title . '">';
 
 // Get the Twitter card meta.
@@ -145,7 +145,7 @@ $page_meta[] = '<meta name="twitter:card" content="summary">';
 $page_meta[] = '<meta name="twitter:site" content="' . $site_title . '">';
 $page_meta[] = '<meta name="twitter:site:id" content="' . $profile_twitter . '">';
 $page_meta[] = '<meta name="twitter:title" content="' . $page_title . '">';
-$page_meta[] = '<meta name="twitter:description" content="' . $meta_description . '">';
+$page_meta[] = '<meta name="twitter:description" content="' . strip_tags($meta_description) . '">';
 $page_meta[] = '<meta name="twitter:creator" content="' . $profile_name . '">';
 $page_meta[] = '<meta name="twitter:domain" content="' . $site_url . '">';
 $page_meta[] = '<meta name="twitter:image:src" content="' . $site_meta_image . '">';
@@ -154,7 +154,7 @@ $page_meta[] = '<meta name="twitter:image:src" content="' . $site_meta_image . '
 $page_meta[] = '<meta property="og:type" content="website">';
 $page_meta[] = '<meta property="og:site_name" content="' . $site_title . '">';
 $page_meta[] = '<meta property="og:title" content="' . $page_title . '">';
-$page_meta[] = '<meta property="og:description" content="' . $meta_description . '">';
+$page_meta[] = '<meta property="og:description" content="' . strip_tags($meta_description) . '">';
 $page_meta[] = '<meta property="og:url" content="' .$site_url . '">';
 $page_meta[] = '<meta property="og:image" content="' . $site_meta_image . '">';
 
