@@ -41,7 +41,6 @@
             <ul class="filter">
                 <li class="<?php if (is_page('home')) { echo('current'); } ?>"><a href="<?php get_setting($site_url); ?>/">Home</a></li>
                 <li class="<?php if (is_page('about')) { echo('current'); } ?>"><a href="<?php get_setting($site_url); ?>/about">About</a></li>
-                <li><a href="<?php get_setting($site_url); ?>/rss">Subscribe</a></li>
             </ul>
         </div>
         
