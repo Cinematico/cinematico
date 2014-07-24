@@ -10,3 +10,5 @@ plugins/*
 
 network-test/
 network-test/*
+
+.DS_Store
