@@ -11,10 +11,10 @@ It doesn’t take much to run Cinematico on most PHP compatible servers, but her
 ## Standard Installation
 This will guide you through installing Cinematico into your website’s document root (e.g. **yoursite.com**).
 
-* Download the latest version of Cinematico (**cinematico.zip**) included within your purchase confirmation email.
-* Unzip the Cinematico package and upload the contents (via FTP or similar) to the root of your website.
-* After everything has been uploaded, run the Cinematico installation by accessing your URL in a web browser.
-* Enter a username, email address and password to install Cinematico.
+1. Download the latest version of Cinematico (**cinematico.zip**) included within your purchase confirmation email.
+2. Unzip the Cinematico package and upload the contents (via FTP or similar) to the root of your website.
+3. After everything has been uploaded, run the Cinematico installation by accessing your URL in a web browser.
+4. Enter a username, email address and password to install Cinematico.
 
 ## License
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
