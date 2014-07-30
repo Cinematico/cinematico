@@ -67,14 +67,16 @@ function get_video($type, $template) {
 function get_videos($type, $template) {
     
     // Variable setup for pagination.
+    if (isset($_GET['page'])) {
     $page_number = PAGE_NUMBER;
+    }
     $page_increment = GALLERY_ITEMS_NUMBER;
     
     // If we're using YouTube.
     if (VIDEO_SERVICE == 'youtube') {
         
         // Variable setup for YouTube pagination.
-        if ($page_number) {
+        if (!empty($page_number)) {
             $start_index = $page_increment*$page_number+'1';
         } else {
             $start_index = '1';
@@ -95,7 +97,7 @@ function get_videos($type, $template) {
     } elseif (VIDEO_SERVICE == 'vimeo') {
     
         // Variable setup for Vimeo pagination.
-        if ($page_number) {
+        if (!empty($page_number)) {
             $start_index = $page_number+'1';
         } else {
             $start_index = '1';
@@ -173,7 +175,11 @@ function get_videos($type, $template) {
 function get_pagination($page_previous_class, $page_next_class) {
     
     // Variable setup for pagination.
+    if (isset($_GET['page'])) {
     $page_number = PAGE_NUMBER;
+    } else {
+        $page_number = '';
+    }
     $page_increment = GALLERY_ITEMS_NUMBER;
     $item_count = get_videos('count', '');
     
@@ -291,8 +297,12 @@ function is_page($page) {
     // Get the current page.    
     $currentpage  = @( $_SERVER['HTTPS'] != 'on' ) ? 'http://'.$_SERVER['SERVER_NAME'] : 'https://'.$_SERVER['SERVER_NAME'];
     
-    $page_number = $_GET['page'];
-    $currentpage .= str_replace(array('?page='.$page_number), '', $_SERVER['REQUEST_URI']);
+    if (isset($_GET['page'])) {
+        $page_number = $_GET['page'];
+        $currentpage .= str_replace(array('?page='.$page_number), '', $_SERVER['REQUEST_URI']);
+    } else {
+        $currentpage .= $_SERVER['REQUEST_URI'];
+    }
     
     // Get the current video ID.
     $the_current_video_id = end((explode('/', $currentpage)));
@@ -304,19 +314,20 @@ function is_page($page) {
         
         // If is home return true.
         if ($home_page == $currentpage) {
-    		return true;
-    	}
+            return true;
+        }
 	
-	} elseif ($page == 'single') {
+    } elseif ($page == 'single') {
         
         // YouTube Video ID Check
         if (VIDEO_SERVICE == 'youtube') {
     	    
-    	    $headers = get_headers('http://gdata.youtube.com/feeds/api/videos/' . $the_current_video_id);	    
+            $headers = get_headers('http://gdata.youtube.com/feeds/api/videos/' . $the_current_video_id);	    
             if (strpos($headers[0], '200')) {
                 return true;
             }
         
+        // Vimeo Video ID Check
         } elseif (VIDEO_SERVICE == 'vimeo') {
             
             $headers = get_headers('http://vimeo.com/api/v2/video/' . $the_current_video_id . '.json');	    
@@ -325,16 +336,16 @@ function is_page($page) {
             }
         }
 	    
-	} elseif ($page == 'about') {
-	
-	    // The about page URL.
-	    $about_page = SITE_URL . '/about';
-	    
-	    // If is home return true.
-	    if ($about_page == $currentpage) {
-	    	return true;
-	    }
-	}
+    } elseif ($page == 'about') {
+    
+        // The about page URL.
+        $about_page = SITE_URL . '/about';
+        
+        // If is home return true.
+        if ($about_page == $currentpage) {
+            return true;
+        }
+    }
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -398,9 +409,7 @@ function get_analytics() {
 }
 
 function get_cinematico_version() {
-    
     $content = file(BASE_DIR . 'ABOUT.md');
     $version = str_replace(array("\n", '- '), '', $content[1]);
-    echo($version);
-    
+    echo($version);   
 }

@@ -17,7 +17,7 @@ if (file_exists('network.php')) {
 include('config.php');
 
 // Get the base directory.
-if ($network_install) {
+if (file_exists('network.php')) {
     $base_url = $network_url;
     $base_dir = $network_dir;
 } else {
@@ -92,8 +92,10 @@ if (is_page('home')) {
     $meta_description = SITE_DESCRIPTION;
     
     // Variable setup for pagination.
-    $page_number = $_GET['page'];
-    define('PAGE_NUMBER', $page_number);
+    if (isset($_GET['page'])) {
+        $page_number = $_GET['page'];
+        define('PAGE_NUMBER', $page_number);
+    }
 
 // Single video pages.    
 } elseif (is_page('single')) {
@@ -108,8 +110,10 @@ if (is_page('home')) {
     $meta_description = get_video('description', $the_video_id, '');
     
     // Variable setup for pagination.
-    $page_number = $_GET['page'];
-    define('PAGE_NUMBER', $page_number);
+    if (isset($_GET['page'])) {
+        $page_number = $_GET['page'];
+        define('PAGE_NUMBER', $page_number);
+    }
     
 // About page.    
 } elseif (is_page('about')) {
@@ -130,7 +134,7 @@ if (is_page('home')) {
 /* The Page Meta
 /*-----------------------------------------------------------------------------------*/
 
-if ($site_image) {
+if (isset($site_image)) {
     $site_meta_image = $site_image;
 } else {
     $site_meta_image = $site_url . '/cinematico/assets/images/logo.jpg';
@@ -178,7 +182,6 @@ if ($_GET['filename'] == 'settings') {
      
     // Get the theme index.
     include(BASE_DIR . 'themes/' . SITE_THEME . '/index.php');
-    
 }
 
 /*-----------------------------------------------------------------------------------*/
