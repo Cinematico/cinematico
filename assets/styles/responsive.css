@@ -1,0 +1,235 @@
+
+/* Responsive Helpers Under 1240px
+*********************************************************************************************/
+
+@media (max-width: 1240px) {
+
+    /* Content
+    *****************************************************************************************/
+    
+    .content {
+        width: 1020px;
+    }
+    
+    /* Screenshots
+    *****************************************************************************************/
+    
+    #screenshots .screenshot:nth-child(2) {
+        left: 250px;
+    }
+}
+
+/* Responsive Helpers Under 1060px
+*********************************************************************************************/
+
+@media (max-width: 1060px) {
+    
+    /* Content
+    *****************************************************************************************/
+    
+    .content {
+        width: 700px;
+    }
+    
+    .content.centered {
+        width: 600px;
+    }
+    
+    /* Intro
+    *****************************************************************************************/
+    
+    #intro {
+        padding-bottom: 450px;
+    }
+    
+    /* Screenshots
+    *****************************************************************************************/
+    
+    #screenshots .screenshot:nth-child(1) {
+        width: 300px;
+        height: 300px;    }
+    
+    #screenshots .screenshot:nth-child(2) {
+        width: 500px;
+        height: 450px;
+        left: 150px;
+    }
+    
+    #screenshots .screenshot:nth-child(3) {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Video Panels
+    *****************************************************************************************/
+    
+    .video iframe {
+        width: 580px;
+        height: 356px;
+        margin: -195px 0 0 -290px;
+    }
+}
+
+/* Responsive Helpers Under 740px
+*********************************************************************************************/
+
+@media (max-width: 740px) {
+
+    /* Setup
+    *****************************************************************************************/
+    
+    body {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    /* Typography
+    *****************************************************************************************/
+    
+    h1, h2, h3, h4 {
+        color: #202020;
+        margin: -10px 0 20px;
+        
+    }
+    
+    h1 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    
+    h2, h3, h4 {
+        font-size: 26px;
+        line-height:30px;
+    }
+    
+    h4 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    /* Rows
+    *****************************************************************************************/
+    
+    .row {
+        padding: 80px 0;
+    }
+    
+    .row.intro,
+    .row.cover,
+    .row.big {
+        font-size: 14px;
+        padding: 200px 0 100px;
+    }
+
+    /* Content
+    *****************************************************************************************/
+
+    .content {
+        width: 280px;
+    }
+    
+    .content.centered {
+        width: 200px;
+    }
+    
+    /* Button
+    *****************************************************************************************/
+    
+    .button {
+        font-family: 'gotham-book', sans-serif;
+        font-size: 12px;
+        line-height: 50px;
+    }
+    
+    /* Header
+    *****************************************************************************************/
+    
+    #header .logo {
+        left: 50%;
+        margin-left: -46px;
+    }
+    
+    #header ul {
+        display: none;
+    }
+    
+    /* Screenshots
+    *****************************************************************************************/
+    
+    #screenshots {
+        padding-bottom: 0;
+    }
+    
+    #screenshots img {
+        width: 100%;
+    }
+    
+    #screenshots .screenshot {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+    }
+    
+    #screenshots .screenshot:nth-child(1) {
+        width: 280px;
+        height: 300px;
+        left: 0;
+        z-index: 12;
+    }
+    
+    #screenshots .screenshot:nth-child(2) {
+        width: 280px;
+        left: 0;
+    }
+    
+    #screenshots .screenshot:nth-child(3) {
+        width: 280px;
+        height: 140px;
+        z-index: 13;
+        left: 0;
+    }
+    
+    /* Services
+    *****************************************************************************************/
+    
+    #services {
+        font-size: 12px;
+    }
+    
+    #services h4 {
+        font-size: 18px;
+        margin: 20px 0 5px;
+    }
+    
+    #services img {
+        width: 100px;
+    }
+    
+    /* Video Panels
+    *****************************************************************************************/
+    
+    .video iframe {
+        width: 280px;
+        height: 160px;
+        margin: -90px 0 0 -140px;
+    }
+    
+    /* Footer
+    *****************************************************************************************/
+    
+    #footer span {
+        background-position: center center;
+        padding-left: 0;
+        text-indent: -10000px;
+    }
+    
+    #footer .left {
+        width: 100%;
+    }
+    
+    #footer .right {
+        display: none;
+    }
+}

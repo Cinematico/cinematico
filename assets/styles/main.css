@@ -1,0 +1,487 @@
+
+/* CSS Reset
+*********************************************************************************************/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Setup
+*********************************************************************************************/
+
+html,
+body {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+@font-face {
+    font-family: gotham-book;
+    src: url('../fonts/gotham-book.ttf')
+}
+
+@font-face {
+    font-family: gotham-light;
+    src: url('../fonts/gotham-light.ttf')
+}
+
+@font-face {
+    font-family: gotham-bold;
+    src: url('../fonts/gotham-bold.ttf')
+}
+
+body {
+    font-family: 'gotham-light', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    color: rgba(32, 32, 32, 0.65);
+}
+
+*, 
+*:before, 
+*:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+/* Typography
+*********************************************************************************************/
+
+h1, h2, h3, h4 {
+    color: #202020;
+    margin: -10px 0 20px;
+    
+}
+
+h1 {
+    font-family: 'gotham-light', sans-serif;
+    font-weight: 800;
+    font-size: 46px;
+    line-height: 60px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+h2, h3, h4 {
+    font-family: 'gotham-light', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height:42px;
+}
+
+h4 {
+    font-size: 28px;
+    line-height: 32px;
+}
+
+a {
+    color: #202020;
+    text-decoration: none;
+    transition-duration: 0.1s;
+}
+
+a:hover {
+    color: rgba(32, 32, 32, 0.5);
+}
+
+a:hover img {
+    opacity: 0.95;
+}
+
+strong {
+    font-family: 'gotham-bold', sans-serif;
+}
+
+/* Icons
+*********************************************************************************************/
+
+@font-face { 
+    font-family: "ionicons"; 
+    src: url("../fonts/ionicons.eot?v=1.4.1"); 
+    src: url("../fonts/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"), 
+         url("../fonts/ionicons.ttf?v=1.4.1") format("truetype"), 
+         url("../fonts/ionicons.woff?v=1.4.1") format("woff"), 
+         url("../fonts/ionicons.svg?v=1.4.1#Ionicons") format("svg"); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+.icon { 
+    display: inline-block; 
+    font-family: "ionicons"; 
+    speak: none; 
+    font-style: normal; 
+    font-weight: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    text-rendering: auto; 
+    line-height: 1; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+}
+
+.icon.github:before { content: "\f233"; }
+.icon.youtube:before { content: "\f24d"; }
+.icon.download:before { content: "\f174"; }
+
+/* Rows
+*********************************************************************************************/
+
+.row {
+    width: 100%;
+    float: left;
+    padding: 100px 0;
+    position: relative;
+}
+
+.row.dark {
+    background-color: #202020;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.row.dark h1,
+.row.dark h2,
+.row.dark h3,
+.row.dark h4,
+.row.dark p a,
+.row.dark strong,
+.row.dark span {
+    color: #ffffff;
+}
+
+.row.dark p a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.row.dark p a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.row.split p {
+    padding: 0 15%;
+}
+
+.row.split .left,
+.row.split .right {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.row.split ul,
+.row.split li {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    float: left;
+}
+
+/* Content
+*********************************************************************************************/
+
+.content {
+    width: 1200px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.content.centered {
+    width: 780px;
+    text-align: center;
+}
+
+/* Layout
+*********************************************************************************************/
+
+.left,
+.right {
+    width: 50%;
+    float: left;
+}
+
+/* Button
+*********************************************************************************************/
+
+.button {
+    border-radius: 3px;
+    font-family: 'gotham-light', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    line-height: 52px;
+    text-transform: uppercase;
+    height: 50px;
+    margin-top: 30px;
+    padding: 0 30px;
+    display: inline-block;
+    transition-duration: 0.1s;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.button .icon {
+    font-size: 21px;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+} 
+
+.button.video-tour {
+    padding-left: 60px;
+}
+
+/* Button & Circle Colors
+*********************************************************************************************/
+
+.button.red {
+    background-color: #e2302f;
+    color: #ffffff;
+}
+
+.button.red:hover .icon {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.button.red:hover {
+    background-color: rgba(225, 48, 47, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.button.white {
+    background-color: #ffffff;
+    color: #202020;
+}
+
+.button.white span {
+    font-family: 'gotham-bold', sans-serif;
+    color: #202020;
+    text-transform: lowercase;
+}
+
+.button.white:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgba(32, 32, 32, 0.75);
+}
+
+/* Header
+*********************************************************************************************/
+
+#header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100px;
+    padding: 0;
+}
+
+#header .logo {
+    order-bottom: none;
+    background: url('../images/logo-white.png') center center no-repeat;
+    background-size: 92px;
+    width: 92px;
+    height: 60px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 10;
+}
+
+#header ul {
+    float: right;
+    font-size: 14px;
+    line-height: 102px;
+}
+
+#header li {
+    float: left;
+    margin-left: 40px;
+    position: relative;
+}
+
+#header li a.contribute {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+#header li a.contribute .icon {
+    font-size: 19px;
+    position: absolute;
+    top: 40px;
+    left: -24px;
+}
+
+#header li a.contribute:hover,
+#header li a.contribute:hover .icon {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#header li a.button {
+    margin-top: -20px;
+}
+
+/* Intro
+*********************************************************************************************/
+
+#intro {
+    padding-bottom: 500px;
+    overflow: hidden;
+}
+
+/* Screenshots
+*********************************************************************************************/
+
+#screenshots {
+    padding-bottom: 0;
+}
+
+#screenshots img {
+    width: 100%;
+}
+
+#screenshots .screenshot {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#screenshots .screenshot:nth-child(1) {
+    width: 800px;
+    height: 400px;
+    left: 0;
+    z-index: 10;
+}
+
+#screenshots .screenshot:nth-child(2) {
+    width: 600px;
+    height: 500px;
+    left: 350px;
+    z-index: 11;
+}
+
+#screenshots .screenshot:nth-child(3) {
+    width: 300px;
+    height: 300px;
+    z-index: 12;
+    right: 0;
+}
+
+/* Services
+*********************************************************************************************/
+
+#services {
+    padding: 0;
+}
+
+#services h4 {
+    font-size: 22px;
+    margin: 20px 0 5px;
+}
+
+#services .youtube {
+    background-color: #e52d27;
+}
+
+#services .vimeo {
+    background-color: #1ab7ea;
+}
+
+#services img {
+    width: 200px;
+}
+
+/* Video Panels
+*********************************************************************************************/
+
+.video {
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    display: none;
+    z-index: 50;
+}
+
+.video .stop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 60;
+}
+
+.video iframe {
+    width: 960px;
+    height: 570px;
+    position: absolute;
+    top: -200%;
+    left: 50%;
+    margin: -285px 0 0 -480px;
+    z-index: 70;
+}
+
+/* Footer
+*********************************************************************************************/
+
+#footer {
+    padding: 30px 0;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+#footer .left {
+    width: 55%;
+}
+
+#footer .right {
+    width: 45%;
+}
+
+#footer span {
+    background: url('../images/75.png') top left no-repeat;
+    background-size: 20px;
+    color: #585858;
+    height: 20px;
+    display: block;
+    padding-left: 30px;   
+}
+
+#footer ul {
+    float: right;
+}
+
+#footer li {
+    float: left;
+    margin-left: 10px;
+}
+
+#footer li a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#footer li.twitter a:hover {
+    border-color: #00b0ed;
+}
+
+#footer li.contact a:hover {
+    border-color: #ffa273;
+}
+
+#footer a,
+#footer li a {
+    color: #585858;
+}
+
+#footer span a {
+    font-family: 'gotham-bold', sans-serif;
+}
+
+#footer li a {
+    text-transform: uppercase;
+}
+
+#footer span a:hover,
+#footer li a:hover {
+    color: #cccccc;
+}
