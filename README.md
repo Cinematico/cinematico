@@ -1,7 +1,7 @@
-## Introducing Cinematico
+## Introduction About Cinematico
 Cinematico is a free (open source), simple, elegant, customizable and automatic website solution for your YouTube or Vimeo account, channel or playlist. To get started, download Cinematico, upload to any PHP compatible server (check your server) and run the setup (no database required). Cinematico will automatically update your site whenever you publish new videos.
 
-## Server Requirements
+## Requirements of server
 It doesn’t take much to run Cinematico on most PHP compatible servers, but here are the specific requirements for your reference:
 
 * PHP 5.3.6+, compiled with the **mcrypt** extension.
